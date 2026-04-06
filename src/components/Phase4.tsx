@@ -19,7 +19,7 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
       if (detailsRef.current) {
         detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    }, 7500); // After the details have finished animating in
+    }, 8500);
 
     return () => {
       clearTimeout(timer);
@@ -36,7 +36,7 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
 
   return (
     <motion.div 
-      className="flex flex-col items-center justify-center min-h-[120vh] bg-forest px-8 text-white relative overflow-visible font-serif py-32"
+      className="flex flex-col items-center justify-center min-h-[120vh] bg-transparent px-8 text-white relative overflow-visible font-serif py-32"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 4.5, ease: "easeOut" }}
@@ -52,13 +52,13 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
           className="font-title italic text-white text-[320px] md:text-[650px] blur-[3px]"
           style={{ letterSpacing: '-0.04em' }}
         >
-          O & M
+          M & O
         </span>
       </motion.div>
 
       <div className="relative flex flex-col items-center z-50 w-full max-w-4xl">
         <motion.div 
-          className="w-full glass rounded-3xl shadow-[0_60px_200px_rgba(0,0,0,0.6)] p-12 md:p-24 flex flex-col items-center text-center space-y-20 relative overflow-hidden deckle-edge"
+          className="w-full glass rounded-3xl shadow-[0_60px_200px_rgba(0,0,0,0.6)] p-12 md:p-24 flex flex-col items-center text-center space-y-16 relative overflow-hidden deckle-edge"
           initial={{ y: 140, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.8, duration: 3.5, ease: [0.19, 1, 0.22, 1] }}
@@ -83,7 +83,7 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 4.5, duration: 3.5 }}
             >
-              Oscar invite son amour
+              Pour tes 25 ans
             </motion.h4>
           </div>
 
@@ -99,7 +99,7 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
             </motion.p>
           </div>
 
-          {/* Details Grid - Targeted for auto-scroll */}
+          {/* Details Grid */}
           <div 
             ref={detailsRef}
             className="grid grid-cols-2 gap-x-12 gap-y-16 w-full pt-10 z-10 scroll-mt-20"
@@ -112,7 +112,7 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
 
           {/* Closing Sentiment */}
           <motion.div 
-            className="pt-24 z-10"
+            className="pt-24 z-10 space-y-20 flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 8.5, duration: 4 }}
@@ -120,24 +120,28 @@ const Phase4: React.FC<Phase4Props> = ({ onReveal, onHiddenReveal }) => {
             <p className="font-title italic text-4xl text-white/90 leading-tight">
               "J'ai hâte de partager<br />cet instant à tes côtés."
             </p>
-            <div className="mt-20 flex justify-center opacity-[0.05]">
-               <span className="font-title text-5xl italic text-white tracking-[0.4em]">O & M</span>
+            
+            <div className="flex flex-col items-center space-y-12">
+               <span className="font-title text-5xl italic text-white/40 tracking-[0.4em] select-none">M & O</span>
+               
+               {/* PS - Moved here: Just under the M&O signature */}
+               <motion.div
+                  className="flex flex-col items-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 11, duration: 4, ease: "easeInOut" }}
+                >
+                  <div className="h-[30px] w-[0.5px] bg-gradient-to-b from-white/20 to-transparent mb-8" />
+                  <p className="text-[11px] italic tracking-[0.35em] text-white/30 font-semibold uppercase text-center px-10 leading-relaxed max-w-sm">
+                    PS : Je crois que ce sera l'un de nos plus beaux souvenirs.
+                  </p>
+                </motion.div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Hidden Message */}
-        <motion.div
-          className="mt-28 flex flex-col items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 12, duration: 4, ease: "easeInOut" }}
-        >
-          <div className="h-[80px] w-[0.5px] bg-gradient-to-b from-white/20 via-white/5 to-transparent mb-12 animate-pulse" />
-          <p className="text-[13px] italic tracking-[0.5em] text-white/40 drop-shadow-xs font-semibold uppercase text-center px-12 leading-relaxed">
-            PS : Je crois que ce sera l'un de nos plus beaux souvenirs.
-          </p>
-        </motion.div>
+        {/* Atmosphere Scroll Line at bottom */}
+        <div className="mt-20 h-[60px] w-[0.5px] bg-white/10" />
       </div>
     </motion.div>
   );

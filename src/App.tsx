@@ -85,8 +85,10 @@ const App: React.FC = () => {
 
   return (
     <div className="relative w-full h-screen overflow-y-auto font-sans selection:bg-white/20 grain text-white bg-transparent">
-      {/* Custom Cursor */}
-      <motion.div className="custom-cursor hidden md:block" style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }} />
+      {/* Custom CURSOR SIGNATURE M&O */}
+      <motion.div className="custom-cursor hidden md:block" style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}>
+        M&O
+      </motion.div>
       <motion.div className="custom-cursor-follower hidden md:block" style={{ x: followX, y: followY, translateX: '-50%', translateY: '-50%' }} />
 
       {/* Audio Elements */}
@@ -110,8 +112,8 @@ const App: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Dynamic CINEMATIC Background - Now with Dynamic Focal Length (Blur) */}
-      <div className="fixed inset-0 -z-10 bg-[#0F1713]">
+      {/* Cinematic SUNNY Background - Now in Bordeaux Setting */}
+      <div className="fixed inset-0 -z-10 bg-[#45150D]">
         <motion.div 
           className="absolute inset-0"
           initial={{ opacity: 0 }}
@@ -126,14 +128,14 @@ const App: React.FC = () => {
               filter: `blur(${phase >= 3 ? '0px' : '10px'}) saturate(1.1) brightness(0.65)` 
             }}
           />
-          {/* Subtle Gilded Green Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0F1713]/70 via-transparent opacity-60 to-[#0F1713]/10" />
+          {/* Subtle Bordeaux Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#45150D]/85 via-transparent opacity-80 to-[#45150D]/30" />
         </motion.div>
         
-        {/* Phase 1 Solid Color */}
+        {/* Phase 1 Solid Bordeaux Color */}
         {phase === 1 && (
           <motion.div 
-            className="absolute inset-0 bg-[#0F1713]"
+            className="absolute inset-0 bg-[#45150D]"
             exit={{ opacity: 0 }}
             transition={{ duration: 2 }}
           />

@@ -20,7 +20,7 @@ const Phase1: React.FC<Phase1Props> = ({ onNext }) => {
       opacity: 0,
       scale: 1.05,
       filter: "blur(30px)",
-      transition: { duration: 2, ease: [0.19, 1, 0.22, 1] }
+      transition: { duration: 1.8, ease: [0.19, 1, 0.22, 1] }
     }
   };
 
@@ -62,25 +62,26 @@ const Phase1: React.FC<Phase1Props> = ({ onNext }) => {
       <div className="relative group flex flex-col items-center mb-20">
         <motion.h1 
           variants={titleVariants} 
-          className="font-title italic text-7xl sm:text-[140px] leading-tight tracking-tight text-white drop-shadow-[0_4px_10px_rgba(255,255,255,0.15)]"
+          // Changed text from Oscar & Manon to Joyeux Anniversaire
+          className="font-title italic text-6xl sm:text-[120px] leading-tight tracking-tight text-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
         >
-          Oscar & Manon
+          Joyeux Anniversaire
         </motion.h1>
         {/* Fine white line separator */}
         <motion.div 
            className="h-[1px] w-32 bg-white/20 mt-10"
            initial={{ width: 0, opacity: 0 }}
-           animate={{ width: 200, opacity: 0.3 }}
+           animate={{ width: 220, opacity: 0.3 }}
            transition={{ delay: 3.2, duration: 3 }}
         />
       </div>
       
       <motion.p 
         variants={itemVariants} 
-        className="text-lg sm:text-xl font-light tracking-[0.4em] font-serif italic text-white/60 mb-20 max-w-sm sm:max-w-none"
+        className="text-lg sm:text-xl font-light tracking-[0.4em] font-serif italic text-white/60 mb-24 max-w-sm sm:max-w-none"
       >
-        Ta petite surprise t'attend...<br />
-        Laisse ton cœur être conquis.
+        Ta petite surprise t'attend...
+        {/* Removed "Laisse ton coeur etre conquis..." */}
       </motion.p>
 
       <motion.button
@@ -88,7 +89,7 @@ const Phase1: React.FC<Phase1Props> = ({ onNext }) => {
         whileHover={{ scale: 1.02, letterSpacing: '0.8em', backgroundColor: 'rgba(255,255,255,0.08)' }}
         whileTap={{ scale: 0.98 }}
         onClick={onNext}
-        className="group relative overflow-hidden px-16 py-6 border-[0.5px] border-white/20 rounded-full backdrop-blur-md transition-all duration-1000 bg-white/5 shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+        className="group relative overflow-hidden px-16 py-6 border-[0.5px] border-white/20 rounded-full backdrop-blur-md transition-all duration-1000 bg-white/5 shadow-[0_15px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
       >
         <span className="relative z-10 text-[11px] uppercase tracking-[0.7em] font-medium text-white group-hover:text-white transition-colors duration-1000">Découvrir ta surprise</span>
         <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />

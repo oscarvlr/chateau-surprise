@@ -12,8 +12,8 @@ const Phase2: React.FC<Phase2Props> = ({ onNext }) => {
     visible: { 
       opacity: 1,
       transition: {
-        staggerChildren: 0.4, // Accelerated from 0.8
-        delayChildren: 0.2    // Accelerated from 0.6
+        staggerChildren: 0.4,
+        delayChildren: 0.2
       }
     },
     exit: { 
@@ -42,11 +42,11 @@ const Phase2: React.FC<Phase2Props> = ({ onNext }) => {
       animate="visible"
       exit="exit"
     >
-      {/* Reduced spacing from space-y-28 to space-y-12 to ensure visibility */}
       <div className="flex flex-col items-center space-y-12 md:space-y-16">
         
         <motion.p variants={textVariants} className="text-[12px] md:text-[14px] font-medium tracking-[0.9em] uppercase text-white/50 font-sans">
-          Une attention pour toi, mon amour
+          {/* Changed 'une attention' to 'un cadeau unique' */}
+          un cadeau unique, pour tes 25 ans
         </motion.p>
         
         <div className="space-y-8 flex flex-col items-center">
@@ -54,7 +54,7 @@ const Phase2: React.FC<Phase2Props> = ({ onNext }) => {
             variants={textVariants} 
             className="text-5xl md:text-[90px] font-title italic text-white leading-[1.05] max-w-4xl tracking-tighter"
           >
-            Ton pique-nique privé sur l'eau,<br />
+            Un pique-nique privé sur l'eau,<br />
             au pied du château.
           </motion.h2>
 
@@ -67,7 +67,7 @@ const Phase2: React.FC<Phase2Props> = ({ onNext }) => {
           
           <motion.p 
             variants={textVariants} 
-            className="text-3xl md:text-[42px] font-serif italic text-white/80 leading-snug"
+            className="text-3xl md:text-[42px] font-serif italic text-white/80 mt-10 leading-snug"
           >
             Au Domaine de Chantilly.
           </motion.p>
@@ -80,7 +80,6 @@ const Phase2: React.FC<Phase2Props> = ({ onNext }) => {
           </motion.p>
         </div>
 
-        {/* REINFORCED BUTTON - MOVED CLOSER & FASTER */}
         <motion.div 
           variants={textVariants}
           className="pt-8"

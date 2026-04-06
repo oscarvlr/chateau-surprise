@@ -5,7 +5,7 @@
   --font-title: "Instrument Serif", serif;
   --font-sans: "Montserrat", sans-serif;
   
-  --color-forest: #0F1713;
+  --color-bordeaux: #45150D;
   --color-gold: #D4AF37;
   --color-offwhite: #FDFBF7;
 }
@@ -13,7 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&family=Montserrat:wght@100;200;300;400&display=swap');
 
 :root {
-  --color-bg: #0F1713;
+  --color-bg: #45150D;
   --color-text: #FFFFFF;
   
   font-family: 'Cormorant Garamond', serif;
@@ -37,7 +37,7 @@ body {
   width: 300%;
   height: 300%;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Static_Grain_Texture.png');
-  opacity: 0.04;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 9999;
   animation: grain 8s steps(10) infinite;
@@ -52,65 +52,40 @@ body {
   90% { transform:translate(-5%, -10%); }
 }
 
-/* CUSTOM CURSOR (White & Glow) */
+/* CUSTOM SIGNATURE CURSOR */
 .custom-cursor {
   position: fixed;
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  transition: transform 0.1s ease-out;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .custom-cursor-follower {
   position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.25s ease-out;
 }
 
-/* SHIMMER FOR BUTTONS */
-.shimmer-button {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer-button::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.1) 50%,
-    rgba(255,255,255,0) 100%
-  );
-  transform: rotate(45deg);
-  transition: all 0.7s;
-  opacity: 0;
-}
-
-.shimmer-button:hover::after {
-  opacity: 1;
-  left: 100%;
-  top: 100%;
-}
-
 /* LUXURY DECKLE-EDGE FOR DARK THEME */
 .deckle-edge {
   box-shadow: 
-    0 15px 50px rgba(0,0,0,0.5),
-    inset 0 0 40px rgba(255,255,255,0.03);
+    0 15px 50px rgba(0,0,0,0.6),
+    inset 0 0 40px rgba(255,255,255,0.02);
   position: relative;
 }
 
